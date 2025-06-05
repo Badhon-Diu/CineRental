@@ -7,7 +7,7 @@ export default function Contextapi({ children }) {
   const [cartdata, setcardata] = useState([]);
 
   console.log(cartdata);
-  
+
   function handleAddtoCart(e, item) {
     e.preventDefault();
     e.stopPropagation();
@@ -22,7 +22,6 @@ export default function Contextapi({ children }) {
   }
 
   function Funcheckout() {
-    
     if (cartdata.length > 0) {
       toast.success("Checkout Successfully !");
     } else {
@@ -36,7 +35,13 @@ export default function Contextapi({ children }) {
     );
   }
 
-  const AllValue = {Funcheckout, cartdata, setcardata, handleAddtoCart, handleRemoveItem };
+  const AllValue = {
+    Funcheckout,
+    cartdata,
+    setcardata,
+    handleAddtoCart,
+    handleRemoveItem,
+  };
 
   return (
     <Moviecontext.Provider value={AllValue}>{children}</Moviecontext.Provider>
